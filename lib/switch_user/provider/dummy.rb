@@ -23,7 +23,7 @@ module SwitchUser
 
       def remember_current_user(remember)
         if remember
-          @original_user = current_user
+          @original_user = current_user.try(:id)
         else
           @original_user = nil
         end
