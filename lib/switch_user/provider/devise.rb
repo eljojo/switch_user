@@ -7,6 +7,7 @@ module SwitchUser
       end
 
       def login(user, scope = :user)
+        @warden.request.env["devise.skip_trackable"] = true
         @warden.set_user(user, :scope => scope)
       end
 
